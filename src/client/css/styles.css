@@ -53,7 +53,7 @@ img {
     padding: 20px;
 }
 .item {
-    position: relative;
+
 }
 
 .item img[class*="pos-"],
@@ -64,22 +64,17 @@ img {
 .item [data-animate-style="dropBounce"] {
     top: -100%;
 }
-.item [data-animate-style="slideRight"] {
-    left: -100%;
-}
 
 
-.box-wrapper {
+
+.well {
     -webkit-transition-duration: 600ms;
     transition-duration: 600ms;
+    position: relative;
+    bottom: 10%;
 }
 
-.box-wrapper.loading:nth-child(odd) {
-    transform: translate(-100%);
-    -webkit-transform: translate(-100%);
-}
-
-.box-wrapper.loading:nth-child(even) {
+.stage-left {
     transform: translate(-100%);
     -webkit-transform: translate(-100%);
 }

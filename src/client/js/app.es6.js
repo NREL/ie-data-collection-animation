@@ -51,9 +51,13 @@
                     $( el ).delay(ms).animate( props, 2000, easing )
                     break
                 case 'slideRight':
-                    easing = 'linear'
-                    props = { left: 0 }
-                    $( el ).delay(ms).animate( props, 2000 )
+                    var ph = $(el).parent().height()
+                    var h = $(el).css('height').slice(0,-2)
+                    $(el).offset({top: ph - h })
+                    $(el).removeClass('stage-left')
+                    // easing = 'linear'
+                    // props = { left: 0 }
+                    // $( el ).delay(ms).animate( props, 2000 )
                     break
 
             }

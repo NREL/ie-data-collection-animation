@@ -36,5 +36,5 @@ $ gulp deploy
 ```
 
 ### In the wild
-The map lives here...?
+The app lives here...?
 
