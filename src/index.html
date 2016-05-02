@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Indian Energy Data Collection Animation</title>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- build:css client/css/styles.min.css -->
+    <link href="client/css/styles.css" rel="stylesheet">
+    <!-- endbuild -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script>
+      (function() {
+          var so = document.createElement('script');
+          so.type = 'text/javascript';
+          so.async = true;
+          so.src = '//apps1.eere.energy.gov/includes/ga/eere.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(so, s);
+      })();
+    </script>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+
+<div id="carousel" class="carousel slide" data-interval="false">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="row">
+                <div class="col-xs-6">
+
+
+                    <img src="client/images/0-1-got.png" alt="Got"
+                        class="img-responsive pos-l10 pos-t10">
+
+                    <img src="client/images/0-2-data.png" alt="Data"
+                        class="img-responsive pos-l20"
+                        data-animate="true"
+                        data-animate-order="2"
+                        data-animate-style="dropBounce">
+
+                    <img src="client/images/0-3-questionmark.png" alt="?"
+                        class="img-responsive pos-l60"
+                        data-animate="true"
+                        data-animate-order="3"
+                        data-animate-style="dropBounce">
+
+                    <div
+                        class="pos-b10 well"
+                        data-animate="true"
+                        data-animate-order="6"
+                        data-animate-style="slideRight">
+                        <p>Here's what you need to know about collecting data for tribal energy projects.</p>
+                    </div>
+
+                </div>
+                <div class="col-xs-4 col-sm-6">
+
+                    <img src="client/images/0-4-piechart.png" alt="Cartoon pie chart"
+                        class="img-responsive pos-r25"
+                        data-animate="true"
+                        data-animate-order="4"
+                        data-animate-style="dropBounce">
+
+                    <img src="client/images/0-5-arrowchart.png" alt="Cartoon arrow"
+                        class="img-responsive pos-r10"
+                        data-animate="true"
+                        data-animate-order="5"
+                        data-animate-style="dropBounce">
+                </div>
+            </div>
+        </div>
+
+        <!-- slide 2 -->
+        <div class="item">
+            <div class="row">
+                <div class="col-xs-6">
+
+                    <div class="pos-l10 pos-t10">
+                        <h2>Data is Critical to Tracking and Measuring Success</h2>
+                    </div>
+
+                    <div
+                        class="pos-b20 well"
+                        data-animate="true"
+                        data-animate-order="1"
+                        data-animate-style="slideRight">
+                        <p>Many tribes have established energy efficiency and renewable energy goals.</p>
+                    </div>
+
+                    <div
+                        class="pos-b10 well"
+                        data-animate="true"
+                        data-animate-order="2"
+                        data-animate-style="slideRight">
+                        <p>But how do you know what goal to set and when you’ve reached or exceeded that goal?</p>
+                    </div>
+
+
+                </div>
+                <div class="col-xs-4 col-sm-6">
+
+                    <img src="client/images/1-1-goals.png" alt="Goals"
+                        class="img-responsive pos-l20"
+                        data-animate="true"
+                        data-animate-order="3"
+                        data-animate-style="dropBounce">
+
+                    <img src="client/images/1-2-achieve.png" alt=""
+                        class="img-responsive pos-l30"
+                        data-animate="true"
+                        data-animate-order="4"
+                        data-animate-style="dropBounce">
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="item">
+            slide 3
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+        <img class="img-responsive" src="client/images/arrow-previous.png" alt="">
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+        <img class="img-responsive" src="client/images/arrow-next.png" alt="">
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Libraries -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+<!-- End Libraries -->
+
+
+
+<!-- build:js client/js/app.min.js -->
+<script src="client/js/app.js"></script>
+<!-- endbuild -->
+
+
+</body>
+</html>
