@@ -36,7 +36,8 @@
             });
         },
         animateElement: function animateElement(el) {
-            var ms = Math.floor(Math.random() * 1000) + 100;
+            //const ms = 0 // Math.floor(Math.random() * 1000) + 100
+            var ms = $(el).data('animateOrder') * 100;
             var style = $(el).data('animateStyle') || 'dropBounce';
             var easing = 'easeOutBounce';
             var props = { top: 0 };
@@ -49,8 +50,9 @@
                 case 'slideRight':
                     var ph = $(el).parent().height();
                     var h = $(el).css('height').slice(0, -2);
-                    $(el).offset({ top: ph - h });
-                    $(el).removeClass('stage-left');
+                    // $(el).offset( {top: ph - h } )
+                    $(el).addClass('delay-' + ms);
+                    $(el).removeClass('off-stage-left');
                     // easing = 'linear'
                     // props = { left: 0 }
                     // $( el ).delay(ms).animate( props, 2000 )

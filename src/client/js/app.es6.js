@@ -40,21 +40,23 @@
         },
 
         animateElement( el ) {
-            const ms = Math.floor(Math.random() * 1000) + 100
+            //const ms = 0 // Math.floor(Math.random() * 1000) + 100
+            const ms = $(el).data('animateOrder') * 100
             const style = $(el).data( 'animateStyle' ) || 'dropBounce'
             let easing = 'easeOutBounce'
             let props = { top: 0 }
 
             switch ( style ) {
-               case 'dropBounce':
+                case 'dropBounce':
                     easing = 'easeOutBounce'
                     $( el ).delay(ms).animate( props, 2000, easing )
                     break
                 case 'slideRight':
                     var ph = $(el).parent().height()
-                    var h = $(el).css('height').slice(0,-2)
-                    $(el).offset({top: ph - h })
-                    $(el).removeClass('stage-left')
+                    var h = $(el).css( 'height' ).slice(0,-2)
+                    // $(el).offset( {top: ph - h } )
+                    $(el).addClass( `delay-${ms}` )
+                    $(el).removeClass( 'off-stage-left' )
                     // easing = 'linear'
                     // props = { left: 0 }
                     // $( el ).delay(ms).animate( props, 2000 )
