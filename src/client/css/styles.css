@@ -25,7 +25,7 @@ h1, h2, h3, h4, .header {
 
 .carousel-inner { border: 1px dotted blue; }
 .carousel .item [class^="col-"],
-.carousel .item { min-height: 480px; }
+.carousel .item { min-height: 660px; }
 @media(min-width:480px) {
     .carousel .item [class^="col-"],
     .carousel .item {
@@ -85,6 +85,7 @@ h1, h2, h3, h4, .header {
 .item .pos-l20  { left: 20%; }
 .item .pos-l25  { left: 25%; }
 .item .pos-l30  { left: 30%; }
+.item .pos-l35  { left: 35%; }
 .item .pos-l40  { left: 40%; }
 .item .pos-l45  { left: 45%; }
 .item .pos-l50  { left: 50%; }
@@ -102,6 +103,7 @@ h1, h2, h3, h4, .header {
 .item .pos-r20  { right: 20%; }
 .item .pos-r25  { right: 25%; }
 .item .pos-r30  { right: 30%; }
+.item .pos-r35  { right: 35%; }
 .item .pos-r40  { right: 40%; }
 .item .pos-r45  { right: 45%; }
 .item .pos-r50  { right: 50%; }
@@ -136,6 +138,7 @@ h1, h2, h3, h4, .header {
 .item .pos-t20  { top: 20%; }
 .item .pos-t25  { top: 25%; }
 .item .pos-t30  { top: 30%; }
+.item .pos-t35  { top: 35%; }
 .item .pos-t40  { top: 40%; }
 .item .pos-t45  { top: 45%; }
 .item .pos-t50  { top: 50%; }

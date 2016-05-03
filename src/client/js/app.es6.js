@@ -54,7 +54,7 @@
                 case 'slideRight':
                     var ph = $(el).parent().height()
                     var h = $(el).css( 'height' ).slice(0,-2)
-                    // $(el).offset( {top: ph - h } )
+                    //$(el).offset( {top: ph - h } )
                     $(el).addClass( `delay-${ms}` )
                     $(el).removeClass( 'off-stage-left' )
                     // easing = 'linear'
