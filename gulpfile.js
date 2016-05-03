@@ -73,8 +73,8 @@ gulp.task('cssmin', function () {
 
 // remove anything in dist
 gulp.task('clean', function() {
-    return gulp.src(['dist/'], {read: false})
-        .pipe(clean({force: true}));
+    return gulp.src(['dist/*'], {read: false})
+        .pipe(clean());
 });
 
 gulp.task('clean-es5', function () {
