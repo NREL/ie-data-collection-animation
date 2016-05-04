@@ -5,18 +5,17 @@
     const puppetmaster = {
 
         init( carousel ) {
-            this.checkItem( carousel )
+            this.checkItem( carousel ) // hide the left carousel arrow
+
             // bind event handlers
             $( carousel ).on( 'slid.bs.carousel', e => {
                 this.checkItem( carousel )
-
                 this.animateSlide(e.relatedTarget)
             })
 
 
             // wait 2 seconds then start the show
             setTimeout( () => {
-                console.log('go!')
                 const firstSlide = $(carousel).find('.item.active')[0]
                 this.animateSlide( firstSlide )
             }, 2000)
@@ -24,6 +23,7 @@
         },
 
         checkItem(carousel) {
+
             const $this = $(carousel)
 
             if ($('.carousel-inner .item:first').hasClass('active')) {
@@ -57,6 +57,7 @@
         animateElement( el ) {
             //const ms = 0 // Math.floor(Math.random() * 1000) + 100
             const ms = $(el).data('animateOrder') * 100
+            const pos = $(el).data('slidePercent') || 10
             const style = $(el).data( 'animateStyle' ) || 'dropBounce'
             let easing = 'easeOutBounce'
             let props = { top: 0 }
@@ -69,20 +70,10 @@
                     break
 
                 case 'slideRight':
-                    var ph = $(el).parent().height()
-                    var h = $(el).css( 'height' ).slice(0,-2)
-                    //$(el).offset( {top: ph - h } )
-                    $(el).addClass( `delay-${ms}` )
-                    $(el).removeClass( 'off-stage-left' )
+                    $(el)
+                        .removeClass('ghost off-stage-left')
+                        .addClass(`delay-${ms} ` + ` move-right-${pos}`)
 
-
-                    $(el).addClass( 'move-right-10' )
-
-
-
-                    // easing = 'linear'
-                    // props = { left: 0 }
-                    // $( el ).delay(ms).animate( props, 2000 )
                     break
 
             }

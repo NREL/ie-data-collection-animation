@@ -8,22 +8,22 @@
         init: function init(carousel) {
             var _this = this;
 
-            this.checkItem(carousel);
+            this.checkItem(carousel); // hide the left carousel arrow
+
             // bind event handlers
             $(carousel).on('slid.bs.carousel', function (e) {
                 _this.checkItem(carousel);
-
                 _this.animateSlide(e.relatedTarget);
             });
 
             // wait 2 seconds then start the show
             setTimeout(function () {
-                console.log('go!');
                 var firstSlide = $(carousel).find('.item.active')[0];
                 _this.animateSlide(firstSlide);
             }, 2000);
         },
         checkItem: function checkItem(carousel) {
+
             var $this = $(carousel);
 
             if ($('.carousel-inner .item:first').hasClass('active')) {
@@ -52,6 +52,7 @@
         animateElement: function animateElement(el) {
             //const ms = 0 // Math.floor(Math.random() * 1000) + 100
             var ms = $(el).data('animateOrder') * 100;
+            var pos = $(el).data('slidePercent') || 10;
             var style = $(el).data('animateStyle') || 'dropBounce';
             var easing = 'easeOutBounce';
             var props = { top: 0 };
@@ -64,17 +65,8 @@
                     break;
 
                 case 'slideRight':
-                    var ph = $(el).parent().height();
-                    var h = $(el).css('height').slice(0, -2);
-                    //$(el).offset( {top: ph - h } )
-                    $(el).addClass('delay-' + ms);
-                    $(el).removeClass('off-stage-left');
+                    $(el).removeClass('ghost off-stage-left').addClass('delay-' + ms + ' ' + (' move-right-' + pos));
 
-                    $(el).addClass('move-right-10');
-
-                    // easing = 'linear'
-                    // props = { left: 0 }
-                    // $( el ).delay(ms).animate( props, 2000 )
                     break;
 
             }

@@ -92,10 +92,12 @@ gulp.task('gh-pages', function() {
         .pipe(ghPages());
 });
 
-gulp.task('deploy', function(cb){
-    runSequence('build', ['gh-pages'], cb)
-});
+// gulp.task('deploy', function(cb){
+//     runSequence('build', ['gh-pages'], cb)
+// });
 
 gulp.task('build', function(cb){
-    runSequence('clean', ['copyimages', 'lint','babel'], 'usemin' , cb)
+    runSequence('clean',
+        ['copyimages', 'lint','babel', 'usemin'] ,
+        cb )
 });
