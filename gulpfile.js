@@ -3,7 +3,7 @@ var gulp = require('gulp')
   , uglify = require('gulp-uglify')
   , sourcemaps = require('gulp-sourcemaps')
   , rename = require('gulp-rename')
-  , clean = require('gulp-clean')
+  , del = require('del')
   , usemin = require('gulp-usemin')
   , cssmin = require('gulp-cssmin')
   , livereload = require('gulp-livereload')
@@ -73,8 +73,13 @@ gulp.task('cssmin', function () {
 
 // remove anything in dist
 gulp.task('clean', function() {
-    return gulp.src(['dist/*'], {read: false})
-        .pipe(clean());
+return del([
+    './dist'
+    // here we use a globbing pattern to match everything inside the `mobile` folder
+    //'dist/mobile/**/*',
+    // we don't want to clean this file though so we negate the pattern
+    //'!dist/mobile/deploy.json'
+  ]);
 });
 
 gulp.task('clean-es5', function () {
@@ -92,5 +97,5 @@ gulp.task('deploy', function(cb){
 });
 
 gulp.task('build', function(cb){
-    runSequence('clean', 'copyfiles', 'lint','babel', 'usemin' /*, 'clean-es5'*/, cb)
+    runSequence('clean', ['copyfiles', 'lint','babel'], 'usemin' /*, 'clean-es5'*/, cb)
 });
