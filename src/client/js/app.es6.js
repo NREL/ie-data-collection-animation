@@ -4,10 +4,12 @@
 
     const puppetmaster = {
 
-        init( container ) {
-
+        init( carousel ) {
+            this.checkItem( carousel )
             // bind event handlers
-            $( container ).on( 'slid.bs.carousel', e => {
+            $( carousel ).on( 'slid.bs.carousel', e => {
+                this.checkItem( carousel )
+
                 this.animateSlide(e.relatedTarget)
             })
 
@@ -15,10 +17,23 @@
             // wait 2 seconds then start the show
             setTimeout( () => {
                 console.log('go!')
-                const firstSlide = $(container).find('.item.active')[0]
+                const firstSlide = $(carousel).find('.item.active')[0]
                 this.animateSlide( firstSlide )
             }, 2000)
 
+        },
+
+        checkItem(carousel) {
+            const $this = $(carousel)
+
+            if ($('.carousel-inner .item:first').hasClass('active')) {
+                $this.find('.left.carousel-control').hide();
+            } else if ($('.carousel-inner .item:last').hasClass('active')) {
+                $this.find('.right.carousel-control').hide();
+            } else {
+                $this.find('.carousel-control').show();
+
+            }
         },
 
         animateSlide(slide) {
