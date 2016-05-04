@@ -15,7 +15,7 @@ var gulp = require('gulp')
 // Watch Our Files
 gulp.task('watch', function() {
     livereload.listen();
-    gulp.watch('src/**/*', ['build']).on('change', livereload.changed)
+    gulp.watch(['src/**/*','!src/client/js/app.js'], ['build']).on('change', livereload.changed)
     //gulp.watch('dist/**/*').on('change', livereload.changed)
 });
 
@@ -38,7 +38,7 @@ gulp.task('usemin', function() {
 });
 
 // copy images to dist/
-gulp.task('copyfiles', function() {
+gulp.task('copyimages', function() {
     gulp.src('src/client/images/**')
     .pipe(gulp.dest('dist/client/images'));
 });
@@ -73,13 +73,13 @@ gulp.task('cssmin', function () {
 
 // remove anything in dist
 gulp.task('clean', function() {
-return del([
-    './dist'
-    // here we use a globbing pattern to match everything inside the `mobile` folder
-    //'dist/mobile/**/*',
-    // we don't want to clean this file though so we negate the pattern
-    //'!dist/mobile/deploy.json'
-  ]);
+    return del([
+        './dist'
+        // here we use a globbing pattern to match everything inside the `mobile` folder
+        //'dist/mobile/**/*',
+        // we don't want to clean this file though so we negate the pattern
+        //'!dist/mobile/deploy.json'
+      ]);
 });
 
 gulp.task('clean-es5', function () {
@@ -97,5 +97,5 @@ gulp.task('deploy', function(cb){
 });
 
 gulp.task('build', function(cb){
-    runSequence('clean', ['copyfiles', 'lint','babel'], 'usemin' /*, 'clean-es5'*/, cb)
+    runSequence('clean', ['copyimages', 'lint','babel'], 'usemin' , cb)
 });

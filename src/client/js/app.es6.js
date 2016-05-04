@@ -62,16 +62,24 @@
             let props = { top: 0 }
 
             switch ( style ) {
+
                 case 'dropBounce':
                     easing = 'easeOutBounce'
                     $( el ).delay(ms).animate( props, 2000, easing )
                     break
+
                 case 'slideRight':
                     var ph = $(el).parent().height()
                     var h = $(el).css( 'height' ).slice(0,-2)
                     //$(el).offset( {top: ph - h } )
                     $(el).addClass( `delay-${ms}` )
                     $(el).removeClass( 'off-stage-left' )
+
+
+                    $(el).addClass( 'move-right-10' )
+
+
+
                     // easing = 'linear'
                     // props = { left: 0 }
                     // $( el ).delay(ms).animate( props, 2000 )

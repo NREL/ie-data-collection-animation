@@ -5,20 +5,34 @@
     'use strict';
 
     var puppetmaster = {
-        init: function init(container) {
+        init: function init(carousel) {
             var _this = this;
 
+            this.checkItem(carousel);
             // bind event handlers
-            $(container).on('slid.bs.carousel', function (e) {
+            $(carousel).on('slid.bs.carousel', function (e) {
+                _this.checkItem(carousel);
+
                 _this.animateSlide(e.relatedTarget);
             });
 
             // wait 2 seconds then start the show
             setTimeout(function () {
                 console.log('go!');
-                var firstSlide = $(container).find('.item.active')[0];
+                var firstSlide = $(carousel).find('.item.active')[0];
                 _this.animateSlide(firstSlide);
             }, 2000);
+        },
+        checkItem: function checkItem(carousel) {
+            var $this = $(carousel);
+
+            if ($('.carousel-inner .item:first').hasClass('active')) {
+                $this.find('.left.carousel-control').hide();
+            } else if ($('.carousel-inner .item:last').hasClass('active')) {
+                $this.find('.right.carousel-control').hide();
+            } else {
+                $this.find('.carousel-control').show();
+            }
         },
         animateSlide: function animateSlide(slide) {
             var _this2 = this;
@@ -43,16 +57,21 @@
             var props = { top: 0 };
 
             switch (style) {
+
                 case 'dropBounce':
                     easing = 'easeOutBounce';
                     $(el).delay(ms).animate(props, 2000, easing);
                     break;
+
                 case 'slideRight':
                     var ph = $(el).parent().height();
                     var h = $(el).css('height').slice(0, -2);
                     //$(el).offset( {top: ph - h } )
                     $(el).addClass('delay-' + ms);
                     $(el).removeClass('off-stage-left');
+
+                    $(el).addClass('move-right-10');
+
                     // easing = 'linear'
                     // props = { left: 0 }
                     // $( el ).delay(ms).animate( props, 2000 )

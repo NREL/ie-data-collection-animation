@@ -32,9 +32,17 @@ h1, h2, h3, h4, .header {
         min-height: 550px;
     }
 }
+.title {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width:60%;
+}
 .well {
+    opacity: .95%;
     padding: 20px;
     position: fixed;
+    width: 65%;
     z-index: 100;
 }
 @media(min-width:480px){
@@ -65,6 +73,15 @@ h1, h2, h3, h4, .header {
 .delay-200 { transition-delay:0.2s; }
 .delay-300 { transition-delay:0.3s; }
 
+
+.move-right-10 {
+    transform: translate(10%);
+    -webkit-transform: translate(10%);
+}
+.move-right-50 {
+    transform: translate(50%);
+    -webkit-transform: translate(50%);
+}
 .well {
     -webkit-transition-duration: 1s;
     transition-duration: 1s;
