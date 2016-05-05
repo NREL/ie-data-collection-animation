@@ -43,18 +43,20 @@ h1, h2, h3, h4, .header {
 
 .well {
     opacity: .95%;
-    padding: 20px;
+    padding: 10px;
     position: fixed;
     width: 50%;
     border: 5px solid #fff;
     /* z-index: 100;*/
 }
 
-.well-45 { width: 45%; }
-.well-50 { width: 50%; }
-.well-60 { width: 60%; }
-.well-70 { width: 70%; }
-.well-80 { width: 80%; }
+.well-45  { width: 45%; }
+.well-50  { width: 50%; }
+.well-60  { width: 60%; }
+.well-70  { width: 70%; }
+.well-80  { width: 80%; }
+.well-90  { width: 90%; }
+.well-100 { width: 100%; }
 
 .ghost {
     opacity: 0;
