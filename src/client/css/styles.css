@@ -2,12 +2,15 @@ body {
     font-family: Arial;
     font-size: 24px;
     color: #004e9c;
+    background-image: url('../../client/images/background.png');
+    background-repeat: repeat-x repeat-y;
 }
 h1, h2, h3, h4, .header {
     font-family: Arial;
     font-size: 40px;
     text-transform: uppercase;
 }
+
 .carousel-control.left,
 .carousel-control.right {
     background-image: none;
@@ -23,10 +26,7 @@ h1, h2, h3, h4, .header {
     right: 0px;
 }
 
-.carousel .item {
-    background-image: url('../../client/images/background.png');
-    background-repeat: repeat-x repeat-y;
-}
+
 
 .carousel-inner {  }
 .carousel .item [class^="col-"],
