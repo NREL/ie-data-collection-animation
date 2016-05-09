@@ -54,6 +54,7 @@
             var ms = $(el).data('animateOrder') * 100;
             var pos = $(el).data('slidePercent') || 10;
             var style = $(el).data('animateStyle') || 'dropBounce';
+
             var easing = 'easeOutBounce';
             var props = { top: 0 };
 
@@ -61,7 +62,7 @@
 
                 case 'dropBounce':
                     easing = 'easeOutBounce';
-                    $(el).delay(ms).animate(props, 2000, easing);
+                    $(el).delay(ms).animate(props, 4000, easing);
                     break;
 
                 case 'slideRight':

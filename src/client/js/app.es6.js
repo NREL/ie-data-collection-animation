@@ -59,6 +59,7 @@
             const ms = $(el).data('animateOrder') * 100
             const pos = $(el).data('slidePercent') || 10
             const style = $(el).data( 'animateStyle' ) || 'dropBounce'
+
             let easing = 'easeOutBounce'
             let props = { top: 0 }
 
@@ -66,7 +67,7 @@
 
                 case 'dropBounce':
                     easing = 'easeOutBounce'
-                    $( el ).delay(ms).animate( props, 2000, easing )
+                    $( el ).delay(ms).animate( props, 4000, easing )
                     break
 
                 case 'slideRight':
